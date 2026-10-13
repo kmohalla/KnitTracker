@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="KnittingData/KnittingData.csproj" />
+  <Project Path="KnitTracker/KnitTracker.csproj" />
+</Solution>
