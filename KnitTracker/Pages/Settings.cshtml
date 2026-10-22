@@ -1,0 +1,20 @@
+﻿@page
+@model SettingsModel
+@{
+    ViewData["Title"] = "Settings";
+}
+
+<h1>Settings</h1>
+
+<fieldset class="mb-3">
+    <legend class="fs-5">Theme</legend>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="theme" id="themeLight" value="light">
+        <label class="form-check-label" for="themeLight">Light</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="theme" id="themeDark" value="dark">
+        <label class="form-check-label" for="themeDark">Dark</label>
+    </div>
+</fieldset>
+

@@ -1,0 +1,49 @@
+@page
+@model KnitTracker.Pages.NeedlePages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Needle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Needle.SizeMm" class="control-label"></label>
+                <input asp-for="Needle.SizeMm" class="form-control" />
+                <span asp-validation-for="Needle.SizeMm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Needle.Type" class="control-label"></label>
+                <input asp-for="Needle.Type" class="form-control" />
+                <span asp-validation-for="Needle.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Needle.Material" class="control-label"></label>
+                <input asp-for="Needle.Material" class="form-control" />
+                <span asp-validation-for="Needle.Material" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Needle.LengthCm" class="control-label"></label>
+                <input asp-for="Needle.LengthCm" class="form-control" />
+                <span asp-validation-for="Needle.LengthCm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

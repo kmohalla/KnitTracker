@@ -1,0 +1,45 @@
+@page
+@model KnitTracker.Pages.PatternPages.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Pattern</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pattern.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pattern.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pattern.Designer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pattern.Designer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pattern.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pattern.Category)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pattern.Difficulty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pattern.Difficulty)
+        </dd>
+    </dl>
+    <form method="post">
+        <input type="hidden" asp-for="Pattern.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

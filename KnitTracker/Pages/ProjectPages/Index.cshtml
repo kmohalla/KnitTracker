@@ -1,0 +1,65 @@
+@page
+@model KnitTracker.Pages.ProjectPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Pattern)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Yarn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Needle)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Project) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Pattern!.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Yarn!.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Needle!.SizeMm)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

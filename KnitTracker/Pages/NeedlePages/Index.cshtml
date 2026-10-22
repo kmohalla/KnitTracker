@@ -1,0 +1,53 @@
+@page
+@model KnitTracker.Pages.NeedlePages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Needle[0].SizeMm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Needle[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Needle[0].Material)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Needle[0].LengthCm)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Needle) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.SizeMm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Material)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.LengthCm)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
